@@ -1,5 +1,7 @@
 # Steam Card Farmer
 
+This is a fork of [DoctorMcKay/Steam-Card-Farmer](https://github.com/DoctorMcKay/Steam-Card-Farmer) old CLI.
+
 ## Requires Node.js version 0.12 or greater, or io.js version 1.0 or greater.
 
 Designed for advanced users.
