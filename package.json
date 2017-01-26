@@ -1,21 +1,21 @@
 {
-	"name": "steam-card-farmer",
-	"description": "Automatically farms card drops for Steam games you own with remaining drops",
-	"version": "2.0.2",
-	"bin": {
-		"steamcardfarmer": "./farmer.js"
-	},
-	"preferGlobal": true,
-	"repository": {
-		"type": "git",
-		"url": "https://github.com/DoctorMcKay/Steam-Card-Farmer"
-	},
-	"dependencies": {
-		"cheerio": "^0.18.0",
-		"steam-user": "^3.3.0",
-		"steam-client": "^1.1.1",
-		"prompt": "^0.2.14",
-		"request": "^2.51.0"
-	},
-	"license": "MIT"
+  "name": "yasi",
+  "description": "Automatically farms card drops for Steam games you own with remaining drops",
+  "version": "0.0.1",
+  "bin": {
+    "yasi": "./farmer.js"
+  },
+  "preferGlobal": true,
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/marcielmj/yasi"
+  },
+  "dependencies": {
+    "cheerio": "^0.22.0",
+    "prompt": "^1.0.0",
+    "request": "^2.79.0",
+    "steam-client": "^2.2.2",
+    "steam-user": "^3.15.0"
+  },
+  "license": "MIT"
 }
