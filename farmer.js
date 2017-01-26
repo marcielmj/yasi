@@ -28,7 +28,7 @@ function log(message) {
 }
 
 var argsStartIdx = 2;
-if(process.argv[0] == 'steamcardfarmer') {
+if(process.argv[0] == 'yasi') {
 	argsStartIdx = 1;
 }
 
