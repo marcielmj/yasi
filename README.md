@@ -1,12 +1,10 @@
 # Yasi
 
-[![js-standard-style](https://cdn.rawgit.com/feross/standard/master/badge.svg)](http://standardjs.com)
-
-This is a fork of [DoctorMcKay/Steam-Card-Farmer](https://github.com/DoctorMcKay/Steam-Card-Farmer/tree/old-cli) old CLI.
-
-## Requires Node.js version 0.12 or greater, or io.js version 1.0 or greater.
-
 Designed for advanced users.
+
+[![style](https://cdn.rawgit.com/feross/standard/master/badge.svg)](http://standardjs.com)
+
+[![npm](https://img.shields.io/npm/v/yasi.svg?style=flat-square)](https://www.npmjs.com/package/yasi) [![license](https://img.shields.io/npm/l/yasi.svg?style=flat-square)](LICENSE)
 
 
 # Installation
