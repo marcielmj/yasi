@@ -30,4 +30,4 @@ It'll automatically switch through all games you have with remaining card drops 
 
 ## License
 
-Released under [the MIT license](http://opensource.org/licenses/MIT).
+This project is licensed under the [MIT License](LICENSE).
