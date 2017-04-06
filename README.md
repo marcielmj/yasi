@@ -11,9 +11,9 @@ Designed for advanced users.
 
 # Installation
 
-- Install [Node.js](https://nodejs.org) (v0.12.0 or later) or [io.js](https://iojs.org)
-- Run `sudo npm install -g yasi` (Linux) or `npm install -g yasi` from an [elevated command prompt](http://pcsupport.about.com/od/commandlinereference/f/elevated-command-prompt.htm) (Windows).
-
+```
+npm install -g yasi
+```
 
 # Usage
 
@@ -28,6 +28,6 @@ If you have purchased a game in the past 14 days, **idling it will waive your ri
 It'll automatically switch through all games you have with remaining card drops (it checks every 20 minutes or immediately when a new item is received). One could theoretically mass-idle all games at once, but it takes just as long and this way doesn't rack up unnecessary fake playtime.
 
 
-## License
+# License
 
 This project is licensed under the [MIT License](LICENSE).
