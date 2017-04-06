@@ -4,7 +4,7 @@ Designed for advanced users.
 
 [![code-style](https://cdn.rawgit.com/feross/standard/master/badge.svg)](http://standardjs.com)
 
-[![npm](https://img.shields.io/npm/v/yasi.svg?style=flat-square)](https://www.npmjs.com/package/yasi) [![license](https://img.shields.io/npm/l/yasi.svg?style=flat-square)](LICENSE)
+[![npm](https://img.shields.io/npm/v/yasi.svg?style=flat-square)](https://www.npmjs.com/package/yasi) [![dependencies](https://img.shields.io/david/marcielmj/yasi.svg?style=flat-square)](https://david-dm.org/marcielmj/yasi) [![license](https://img.shields.io/npm/l/yasi.svg?style=flat-square)](LICENSE)
 
 
 # Installation
