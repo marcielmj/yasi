@@ -1,9 +1,9 @@
 {
   "name": "yasi",
   "version": "0.1.0",
-  "description": "Automatically farms card drops for Steam games you own with remaining drops",
+  "description": "Yet Another Steam Idle",
   "bin": {
-    "yasi": "./farmer.js"
+    "yasi": "./bin/yasi"
   },
   "preferGlobal": true,
   "repository": {

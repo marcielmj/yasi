@@ -1,5 +1,3 @@
-#!/usr/bin/env node
-
 var SteamUser = require('steam-user');
 var Steam = SteamUser.Steam;
 var prompt = require('prompt');
