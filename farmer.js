@@ -7,7 +7,7 @@ var request = require('request');
 var Cheerio = require('cheerio');
 var log = require('fancy-log');
 
-var client = new SteamUser({"enablePicsCache": true});
+var client = require('./lib/user');
 
 var g_Jar = request.jar();
 request = request.defaults({"jar": g_Jar});
@@ -16,56 +16,34 @@ var g_CheckTimer;
 var g_OwnedApps = [];
 
 
-var argsStartIdx = 2;
-if(process.argv[0] == 'yasi') {
-	argsStartIdx = 1;
-}
+prompt.start();
 
-if(process.argv.length == argsStartIdx + 2) {
-	log("Reading Steam credentials from command line");
+prompt.get({
+	"properties": {
+		"username": {
+			"required": true
+		},
+		"password": {
+			"hidden": true,
+			"required": true
+		}
+	}
+}, function(err, result) {
+	if(err) {
+		log("Error: " + err);
+		shutdown(1);
+		return;
+	}
+
 	client.logOn({
-		"accountName": process.argv[argsStartIdx],
-		"password": process.argv[argsStartIdx + 1]
+		"accountName": result.username,
+		"password": result.password
 	});
-} else {
-	prompt.start();
-	prompt.get({
-		"properties": {
-			"username": {
-				"required": true
-			},
-			"password": {
-				"hidden": true,
-				"required": true
-			}
-		}
-	}, function(err, result) {
-		if(err) {
-			log("Error: " + err);
-			shutdown(1);
-			return;
-		}
-
-		log("Initializing Steam client...");
-		client.logOn({
-			"accountName": result.username,
-			"password": result.password
-		});
-	});
-}
-
-client.on('loggedOn', function() {
-	log("Logged into Steam!");
-	log("Waiting for license info...");
 });
 
 client.once('appOwnershipCached', function() {
 	log("Got app ownership info");
 	checkMinPlaytime();
-});
-
-client.on('error', function(e) {
-	log("Error: " + e);
 });
 
 function checkMinPlaytime() {
@@ -363,9 +341,6 @@ process.on('SIGINT', function() {
 
 function shutdown(code) {
 	client.logOff();
-	client.once('disconnected', function() {
-		process.exit(code);
-	});
 
 	setTimeout(function() {
 		process.exit(code);
