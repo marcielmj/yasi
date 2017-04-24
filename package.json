@@ -1,6 +1,6 @@
 {
   "name": "yasi",
-  "version": "0.0.5",
+  "version": "0.1.0",
   "description": "Automatically farms card drops for Steam games you own with remaining drops",
   "bin": {
     "yasi": "./farmer.js"
