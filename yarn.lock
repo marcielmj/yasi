@@ -1448,7 +1448,7 @@ steam-client@^2.0.0, steam-client@^2.2.2:
     bytebuffer "^5.0.0"
     steam-resources seishun/node-steam-resources#v1.0.0
 
-steam-resources@seishun/node-steam-resources#v1.0.0:
+"steam-resources@github:seishun/node-steam-resources#v1.0.0":
   version "1.0.0"
   resolved "https://codeload.github.com/seishun/node-steam-resources/tar.gz/1403939a12ba467a4b82c8ccbc279bbcdad43588"
   dependencies:
