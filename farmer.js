@@ -1,8 +1,8 @@
-const Cheerio = require('cheerio')
+const cheerio = require('cheerio')
 const log = require('fancy-log')
 const prompt = require('prompt')
-const SteamUser = require('steam-user')
-const Steam = SteamUser.Steam
+const steamUser = require('steam-user')
+const steam = steamUser.Steam
 
 let request = require('request')
 let user = require('./lib/user')
@@ -77,7 +77,7 @@ function checkMinPlaytime() {
 				return !(pkg.extended && pkg.extended.freeweekend);
 			});
 
-			var $ = Cheerio.load(body);
+			var $ = cheerio.load(body);
 			$('.badge_row').each(function() {
 				var row = $(this);
 				var overlay = row.find('.badge_row_overlay');
@@ -108,7 +108,7 @@ function checkMinPlaytime() {
 					return pkg.appids && pkg.appids.indexOf(appid) != -1;
 				}).forEach(function(pkg) {
 					var timeCreatedAgo = Math.floor(Date.now() / 1000) - pkg.time_created;
-					if(timeCreatedAgo < (60 * 60 * 24 * 14) && [Steam.EPaymentMethod.ActivationCode, Steam.EPaymentMethod.GuestPass, Steam.EPaymentMethod.Complimentary].indexOf(pkg.payment_method) == -1) {
+					if(timeCreatedAgo < (60 * 60 * 24 * 14) && [steam.EPaymentMethod.ActivationCode, steam.EPaymentMethod.GuestPass, steam.EPaymentMethod.Complimentary].indexOf(pkg.payment_method) == -1) {
 						newlyPurchased = true;
 					}
 				});
@@ -283,7 +283,7 @@ function checkCardApps() {
 			var totalDropsLeft = 0;
 			var appLaunched = false;
 
-			var $ = Cheerio.load(body);
+			var $ = cheerio.load(body);
 			var infolines = $('.progress_info_bold');
 
 			for(var i = 0; i < infolines.length; i++) {
