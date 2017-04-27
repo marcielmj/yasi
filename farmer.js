@@ -5,11 +5,11 @@ const SteamUser = require('steam-user')
 const Steam = SteamUser.Steam
 
 let request = require('request')
-
 let user = require('./lib/user')
 
 let gJar = request.jar()
 request = request.defaults({'jar': gJar})
+
 let gPage = 1
 let gCheckTimer
 let gOwnedApps = []
@@ -19,9 +19,11 @@ function shutdown () {
 }
 
 process.on('SIGINT', shutdown)
+
 process.on('SIGTERM', shutdown)
 
 prompt.start()
+
 prompt.get({'properties': {
   'username': {
     'required': true
