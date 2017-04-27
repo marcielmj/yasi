@@ -15,6 +15,7 @@ let gCheckTimer
 let gOwnedApps = []
 
 function shutdown () {
+  user.gamesPlayed([])
   user.logOff()
 }
 
