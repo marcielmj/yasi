@@ -14,7 +14,7 @@
   "preferGlobal": true,
   "repository": {
     "type": "git",
-    "url": "https://github.com/marcielmj/yasi"
+    "url": "https://github.com/marcielmj/yasi.git"
   },
   "dependencies": {
     "cheerio": "^0.22.0",
