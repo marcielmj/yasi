@@ -1,4 +1,5 @@
 const cheerio = require('cheerio')
+const inquirer = require('inquirer')
 const log = require('fancy-log')
 const prompt = require('prompt')
 const steamUser = require('steam-user')
@@ -6,6 +7,7 @@ const steam = steamUser.Steam
 
 let request = require('request')
 let user = require('./lib/user')
+let questions = require('./lib/cli/questions')
 
 let gJar = request.jar()
 request = request.defaults({'jar': gJar})
@@ -23,26 +25,10 @@ process.on('SIGINT', shutdown)
 
 process.on('SIGTERM', shutdown)
 
-prompt.start()
-
-prompt.get({'properties': {
-  'username': {
-    'required': true
-  },
-  'password': {
-    'hidden': true,
-    'required': true
-  }
-}}, (err, result) => {
-  if (err) {
-    log(err + '!')
-    shutdown()
-    return
-  }
-
+inquirer.prompt(questions.logOn).then(function (answers) {
   user.logOn({
-    'accountName': result.username,
-    'password': result.password
+    'accountName': answers.username,
+    'password': answers.password
   })
 })
 
