@@ -1,3 +1,5 @@
+'use strict'
+
 const cheerio = require('cheerio')
 const inquirer = require('inquirer')
 const log = require('fancy-log')
