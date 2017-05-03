@@ -20,9 +20,7 @@ request = request.defaults({'jar': gJar})
 
 process.on('SIGINT', user.logout)
 
-process.on('SIGTERM', user.logout)
-
-inquirer.prompt(questions.logOn).then((answers) => {
+inquirer.prompt(questions.login).then((answers) => {
   user.login(answers)
 })
 
