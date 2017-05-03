@@ -4,34 +4,26 @@ const cheerio = require('cheerio')
 const inquirer = require('inquirer')
 const log = require('fancy-log')
 const prompt = require('prompt')
-const steamUser = require('steam-user')
-const steam = steamUser.Steam
+const steam = require('steam-user').Steam
+
+const questions = require('./lib/cli/questions')
+const user = require('./lib/user')
 
 let request = require('request')
-let user = require('./lib/user')
-let questions = require('./lib/cli/questions')
 
 let gJar = request.jar()
-request = request.defaults({'jar': gJar})
-
 let gPage = 1
 let gCheckTimer
 let gOwnedApps = []
 
-function shutdown () {
-  user.gamesPlayed([])
-  user.logOff()
-}
+request = request.defaults({'jar': gJar})
 
-process.on('SIGINT', shutdown)
+process.on('SIGINT', user.logout)
 
-process.on('SIGTERM', shutdown)
+process.on('SIGTERM', user.logout)
 
-inquirer.prompt(questions.logOn).then(function (answers) {
-  user.logOn({
-    'accountName': answers.username,
-    'password': answers.password
-  })
+inquirer.prompt(questions.logOn).then((answers) => {
+  user.login(answers)
 })
 
 user.once('appOwnershipCached', () => {
@@ -313,8 +305,8 @@ function checkCardApps() {
 					checkMinPlaytime();
 				} else {
 					log("All card drops recieved!");
-					log("Shutting Down.")
-					shutdown(0);
+          log("Shutting Down.")
+          user.logout()
 				}
 			} else {
 				checkCardsInSeconds(1200); // 20 minutes to be safe, we should automatically check when Steam notifies us that we got a new item anyway
