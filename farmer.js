@@ -21,7 +21,7 @@ request = request.defaults({'jar': gJar})
 process.on('SIGINT', user.logout)
 
 inquirer.prompt(questions.login).then((answers) => {
-  user.login(answers)
+  user.login(answers.username, answers.password)
 })
 
 user.once('appOwnershipCached', () => {
