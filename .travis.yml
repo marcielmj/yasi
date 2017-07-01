@@ -1,12 +1,12 @@
 language: node_js
 node_js:
 - '6'
-- '7'
 deploy:
   provider: npm
   email: marcielmj@gmail.com
   api_key:
     secure: 3e+d5VpzMnt6h9a05lkvh7yJQmd9nqRlzV0fqeYiXwitn1jA3emBDDw2GwIBGx2ZPyb9GPkUJMSEi9GGsr77Wd6zr7J/k5GIJ3QcgOdq4RKn5OPLYc+spx3gzjdzomx4Hg9QxQXS+s027CpgnbQFwnHsnb2JlzqW65hFmjua2ZIsLO4Nt5eHE0Tf310vn00GB6Uco2CBqaViqyt1eIHloICpmgVp+w2K7v2cO/cHr/o4cV1rICkkqUJMg42MtcU5E0a4pCWTLv2IV26E+gHb1gEdiJGaKib+t+A8GKcxuwqmvmpTom9NAhkZ4lKDicehlLlZJTvworgDq1Act9MMPukTNHe2aqJr1APQHzlvCsZW/0RKO0YC216CZkU/NreoOIbOmgAe2bDLSz4YvKs4LXcKgnqHNxLK3H3PZGUROj02w1M9YKHBIMFwABJGny9tox90QhvNLBt7gHPqGRdZXTGqRNtPdyUxuzaTfLssfqyxM2I7HUVJdLvDDZKpsSUGScwyXEjiv/qnoVPXG2a3YB/IRnd6jZP5c0ZvXLIcQA4um8D22LGj7Djl7aoCaTqkwExhhrCOP4eTmR3fIAJdiX7q0/Fiz+NiBHibpsf4NCYkQwaRHzMBRVky2sOAh+D83zJKuIAOITODzagStsqbcttz5QTG3BDeYwcemZCTyWs=
   on:
+    tags: true
     branch: master
     repo: marcielmj/yasi
