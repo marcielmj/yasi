@@ -1,4 +1,8 @@
 #!/usr/bin/env node
 'use strict'
 
+process.title = 'yasi'
+
+global._mckay_statistics_opt_out = true
+
 require('../farmer')
